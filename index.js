@@ -1,0 +1,62 @@
+ // example of food order
+
+
+function greet(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve("welcome");
+        }, 1000);
+    });
+}
+function takeOrder(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve("take order");
+        }, 1500);
+    });
+}
+function givenFood(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve("giveFood");
+    
+        }, 2000);
+    })
+}
+function takePayment(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+           resolve("takePayment");
+        }, 3000);
+    })
+}
+function thanks(){
+setTimeout(() => {
+    console.log("thanks for visiting");
+}, 0);
+    
+}
+greet().then((data1)=>{
+    console.log(data1, new Date());
+   return takeOrder();
+})
+.then((data2)=>{
+    console.log(data2, new Date());
+    return givenFood();
+})
+.then((data3)=>{
+    console.log(data3,new Date())
+     return takePayment()
+})
+.then((data4)=>{
+
+    console.log(data4, new Date())
+  
+    thanks();
+   
+})
+.catch((err)=>{
+    console.log("sorry something is going wrong")
+})
+
+ 

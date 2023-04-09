@@ -32,7 +32,7 @@ function takePayment(){
 }
 function thanks(){
 setTimeout(() => {
-    console.log("thanks for visiting");
+    console.log("thanks for visiting", new Date());
 }, 0);
     
 }
